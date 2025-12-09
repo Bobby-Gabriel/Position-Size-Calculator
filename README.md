@@ -1,17 +1,39 @@
 # Position-Size-Calculator
 
 ## Windows
-Pre Req
-install c++ build tools. Just select c++ desktop development in the VS installer. Dont need Windows 11 SDK though
-install cmake 4.0
-install python
-install conan
 
+### Requirements
+- MSVC C++ Build Tools 18
+- CMake 4.0+
+- Python 3.9+
+- Conan 2.0+
+
+### Setup and Install
+1. After installing `Conan`, set up default profile:
+
+```
 conan profile detect --force
-May need to add msvc to conan profile
+```
 
-### Install
-Install deps
+2. Add path to MSVC installation to `~\.conan2\profiles\default`
+
+```
+[conf]
+tools.microsoft.msbuild:vs_version=18
+```
+
+3. Install dependencies
+
+```
 conan install . --build=missing
+```
+
+4. Configure and Install Project
+
+```
 cmake --preset default
 cmake --build --preset default
+```
+
+## Using the project
+Run the .exe file in the `bin` directory at the root of the project.

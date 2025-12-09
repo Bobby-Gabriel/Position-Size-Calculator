@@ -15,10 +15,17 @@ add_executable(PositionSizeCalculator)
 
 target_sources(PositionSizeCalculator
     PRIVATE
-    main.cpp
+    src/main.cpp
 )
 
 target_link_libraries(PositionSizeCalculator
     PRIVATE
     Qt6::Widgets
+)
+
+# Copy the QSS file to the output directory
+add_custom_command(TARGET PositionSizeCalculator POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy
+    ${CMAKE_SOURCE_DIR}/resources/widget.qss
+    ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/widget.qss
 )
