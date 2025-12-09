@@ -37,3 +37,7 @@ cmake --build --preset default
 
 ## Using the project
 Run the .exe file in the `bin` directory at the root of the project.
+
+OR 
+
+run the `create_desktop_shortcut.ps1` to save it to your desktop.

@@ -11,7 +11,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_SOURCE_DIR}/bin)
 
 find_package(Qt6 COMPONENTS Widgets REQUIRED)
 
-add_executable(PositionSizeCalculator)
+add_executable(PositionSizeCalculator WIN32)
 
 target_sources(PositionSizeCalculator
     PRIVATE
